@@ -85,8 +85,9 @@ pipeline {
                 }
                 sshagent(credentials: ['vagrant-ssh-key']) {
                     sh '''
-                    ansible-playbook -i inventory deploy.yaml \
-                      --extra-vars "env=prod image_tag=thapavishal/elearning:$BUILD_NUMBER"
+                    ansible-playbook -i ansible/inventory/prod.ini ansible/playbooks/deploy.yaml \
+                    // ansible-playbook -i inventory deploy.yaml \
+                      --extra-vars "env=prod image_tag=thapavishal/employee:$BUILD_NUMBER"
                     '''
                 }
             }
