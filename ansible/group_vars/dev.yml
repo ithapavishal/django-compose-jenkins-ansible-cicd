@@ -1,4 +1,4 @@
-compose_file: docker-compose.app.yml
+compose_file: docker-compose.yml
 project_name: employee
 docker_image: "thapavishal/employee"
 env_file: .env
